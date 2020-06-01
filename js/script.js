@@ -32,29 +32,31 @@ $(document).ready(function(){
 	        }
 	    }
 	});
-	//lecture 22 starts
-	$('.chart').easyPieChart({
-            easing: 'easeInOut',
-            barColor: '#fff',
-            trackColor: false,
-            scaleColor: false,
-            lineWidth: 4,
-            size: 152,
-            onStep: function(from, to, percent){
-            	$(this.el).find('.percent').text(Math.round(percent));
-            }
-    });
+	var skillsTopOffset = $(".skillsSection").offset().top;
 
-    var skillsTopOffset=$(".skillsSection").offset().top;
+	$(window).scroll(function() {
 
-    $(window).scroll(function(){
+		if(window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
 
-    	if(window.pageYOffset>skillsTopOffset-$(window).height()+200){
+			$('.chart').easyPieChart({
+		        easing: 'easeInOut',
+		        barColor: '#fff',
+		        trackColor: false,
+		        scaleColor: false,
+		        lineWidth: 4,
+		        size: 152,
+		        onStep: function(from, to, percent) {
+		        	$(this.el).find('.percent').text(Math.round(percent));
+		        }
+		    });
+			
 
-    	}
+		}
 
-    });
-    //lecture 22 ends 
+
+	});
+
+
 });
 
 
