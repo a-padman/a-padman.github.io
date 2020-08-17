@@ -1,2 +1,2 @@
-My Personal Website - Last Updated March 2020
+My Personal Website - Last Updated August 2020
 # Visit at a-padman.github.io
